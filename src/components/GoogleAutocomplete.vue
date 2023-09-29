@@ -20,10 +20,6 @@ const props = defineProps({
     type: String,
     required: true
   },
-  version: {
-    type: String,
-    default: 'weekly'
-  },
   placeholder: {
     type: String,
     default: ''
