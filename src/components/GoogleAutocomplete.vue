@@ -38,7 +38,7 @@ const props = defineProps({
   }
 })
 
-const origin = ref<HTMLElement>();
+const origin = ref<any>();
 const place = ref<any>()
 const isLoaded = ref(false)
 
@@ -55,7 +55,7 @@ const loadApi = () => {
           `https://maps.googleapis.com/maps/api/js?key=${props.apiKey}&libraries=places&v=weekly&callback=initMap`
         );
 
-        window.initMap = () => {
+        (window as any).initMap = () => {
           resolve()
         }
 
@@ -121,6 +121,6 @@ onMounted(async () => {
 })
 
 onBeforeUnmount(() => {
-  delete window.initMap;
+  delete (window as any).initMap;
 });
 </script>

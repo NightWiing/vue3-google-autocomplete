@@ -21,3 +21,138 @@ yarn add vue3-google-autocomplete
 ```
 
 ## Usage
+Here is the example on how to use it inside your Vue component.
+
+```
+<template>
+  <GoogleAutocomplete
+    v-model="value"
+    api-key="process.env.VITE_APP_GAPI_KEY"
+  />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { GoogleAutocomplete } from 'vue3-google-autocomplete'
+
+const value = ref()
+</script>
+```
+
+Beside this we have one event on which you can get Google places api payload. on `@set` event you can get your payload and v-model you will get place name so it will be easier for you to integrate this inside your form for address purpose
+
+```
+<template>
+  <GoogleAutocomplete
+    v-model="value"
+    api-key="process.env.VITE_APP_GAPI_KEY"
+    @set="getPayload($event)"
+  />
+</template>
+```
+
+By default you will get payload like this.
+
+Eg.
+
+```
+{
+    "name": "The White House",
+    "city": "Washington",
+    "state": "District of Columbia",
+    "country": "United States",
+    "latitude": 38.8976763,
+    "longitude": -77.0365298
+}
+```
+
+We have one prop option `isFullPayload` which is `false` by default but if you pass `isFullPayload: true` prop to `GoogleAutocomplete` component then you will get whole google places api payload.
+
+Eg.
+
+```
+<template>
+  <GoogleAutocomplete
+    v-model="value"
+    api-key="process.env.VITE_APP_GAPI_KEY"
+    :isFullPayload="true"
+    @set="getPayload($event)"
+  />
+</template>
+```
+In this case payload will look like this.
+
+```
+{
+    "address_components": [
+        {
+            "long_name": "1600",
+            "short_name": "1600",
+            "types": [
+                "street_number"
+            ]
+        },
+        {
+            "long_name": "Pennsylvania Avenue Northwest",
+            "short_name": "Pennsylvania Avenue NW",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "long_name": "Northwest Washington",
+            "short_name": "Northwest Washington",
+            "types": [
+                "neighborhood",
+                "political"
+            ]
+        },
+        {
+            "long_name": "Washington",
+            "short_name": "Washington",
+            "types": [
+                "locality",
+                "political"
+            ]
+        },
+        {
+            "long_name": "District of Columbia",
+            "short_name": "DC",
+            "types": [
+                "administrative_area_level_1",
+                "political"
+            ]
+        },
+        {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+                "country",
+                "political"
+            ]
+        },
+        {
+            "long_name": "20500",
+            "short_name": "20500",
+            "types": [
+                "postal_code"
+            ]
+        }
+    ],
+    "formatted_address": "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
+    "geometry": {
+        "location": {
+            "lat": 38.8976763,
+            "lng": -77.0365298
+        },
+        "viewport": {
+            "south": 38.89639945,
+            "west": -77.0379004802915,
+            "north": 38.90150685,
+            "east": -77.03520251970849
+        }
+    },
+    "name": "The White House",
+    "html_attributions": []
+}
+```
