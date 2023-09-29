@@ -2,7 +2,7 @@
   "name": "vue3-google-autocomplete",
   "license": "MIT",
   "description": "Vue3 component to get organized payload of Place name, city, state, country and lat-long",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "author": "Aman Upadhyay",
   "files": [
