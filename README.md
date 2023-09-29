@@ -2,6 +2,8 @@
 
 This is simple google places autocomplete address widget for your use in Vu3 applications. This is basically style-less component so you can provide styling/classes as per your need.
 
+![Demo GIF](/prop.gif)
+
 ## Prerequisites
 
 * Node.js (@16.13.0 or later)
@@ -17,3 +19,5 @@ or
 ```
 yarn add vue3-google-autocomplete
 ```
+
+## Usage
