@@ -39,7 +39,7 @@ const value = ref()
 </script>
 ```
 
-Beside this we have one event on which you can get Google places api payload. on `@set` event you can get your payload and v-model you will get place name so it will be easier for you to integrate this inside your form for address purpose
+Beside this we have one `@set` event on which you can get your google places api payload and with v-model you will get place name so it will be easier for you to integrate this inside your form for address purpose
 
 ```
 <template>
@@ -66,7 +66,7 @@ Eg.
 }
 ```
 
-We have one prop option `isFullPayload` which is `false` by default but if you pass `isFullPayload: true` prop to `GoogleAutocomplete` component then you will get whole google places api payload.
+There is one prop option `isFullPayload` which is `false` by default but if you pass `isFullPayload: true` prop to `GoogleAutocomplete` component then you will get whole google places api payload.
 
 Eg.
 
