@@ -23,7 +23,8 @@ yarn add vue3-google-autocomplete
 ## Usage
 Here is the example on how to use it inside your Vue component.
 
-```
+```Javascript
+# This is a Javascript code block
 <template>
   <GoogleAutocomplete
     v-model="value"
