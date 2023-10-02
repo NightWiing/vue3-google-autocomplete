@@ -156,3 +156,8 @@ In this case payload will look like this.
     "html_attributions": []
 }
 ```
+
+
+## Contribution
+
+Suggestions and pull requests are welcome after discussing the issue
