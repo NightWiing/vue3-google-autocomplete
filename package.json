@@ -2,7 +2,7 @@
   "name": "vue3-google-autocomplete",
   "license": "MIT",
   "description": "Vue3 component to get organized payload of Place name, city, state, country and lat-long",
-  "version": "1.0.1",
+  "version": "0.0.3",
   "type": "module",
   "author": "Aman Upadhyay",
   "files": [
@@ -12,11 +12,11 @@
   "module": "./dist/vue3-google-autocomplete.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/vue3-google-autocomplete.js",
       "require": "./dist/vue3-google-autocomplete.umd.cjs"
     }
   },
-  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
