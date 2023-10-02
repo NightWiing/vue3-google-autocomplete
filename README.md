@@ -24,7 +24,6 @@ yarn add vue3-google-autocomplete
 Here is the example on how to use it inside your Vue component.
 
 ```Javascript
-# This is a Javascript code block
 <template>
   <GoogleAutocomplete
     v-model="value"
@@ -42,7 +41,7 @@ const value = ref()
 
 Beside this we have one `@set` event on which you can get your google places api payload and with v-model you will get place name so it will be easier for you to integrate this inside your form for address purpose
 
-```
+```Javascript
 <template>
   <GoogleAutocomplete
     v-model="value"
@@ -56,7 +55,7 @@ By default you will get payload like this.
 
 Eg.
 
-```
+```Javascript
 {
     "name": "The White House",
     "city": "Washington",
@@ -71,7 +70,7 @@ There is one prop option `isFullPayload` which is `false` by default but if you 
 
 Eg.
 
-```
+```Javascript
 <template>
   <GoogleAutocomplete
     v-model="value"
@@ -83,7 +82,7 @@ Eg.
 ```
 In this case payload will look like this.
 
-```
+```Javascript
 {
     "address_components": [
         {
