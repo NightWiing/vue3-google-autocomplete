@@ -24,6 +24,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  types: {
+    type: Array,
+    default: () => [],
+  },
   isFullPayload: {
     type: Boolean,
     default: false
@@ -70,6 +74,7 @@ const setPlacesListener = () => {
     const places = google.maps.places
     const autocompleteInstance = new places.Autocomplete(origin.value, {
       fields: ['formatted_address', 'address_components', 'geometry', 'name'],
+      types: props.types,
       strictBounds: false
     })
 

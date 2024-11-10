@@ -26,6 +26,8 @@ Here is the example on how to use it inside your Vue component.
   />
 </template>
 
+
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleAutocomplete } from 'vue3-google-autocomplete'
@@ -34,6 +36,20 @@ const value = ref()
 </script>
 
 ```
+
+Pass in types to filter your autocomplete results to your specific Google place type(s).
+[Google Place Types](https://developers.google.com/maps/documentation/places/web-service/supported_types/)
+
+```Javascript
+<template>
+  <GoogleAutocomplete
+    v-model="value"
+    api-key="process.env.VITE_APP_GAPI_KEY"
+    types="['establishment']"
+  />
+</template>
+```
+
 Here on `@set` event you can get your google places api payload
 ```Javascript
 <template>
